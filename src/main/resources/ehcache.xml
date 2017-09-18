@@ -1,0 +1,25 @@
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="ehcache.xsd"
+         updateCheck="true"
+         monitoring="autodetect"
+         dynamicConfig="true">
+
+    <diskStore path="java.io.tmpdir" />
+
+
+    <cache name="demoCache"
+           maxEntriesLocalHeap="10000"
+           maxEntriesLocalDisk="100000"
+           diskSpoolBufferSizeMB="50"
+           eternal="false"
+           timeToIdleSeconds="86400" timeToLiveSeconds="86400"
+           memoryStoreEvictionPolicy="LFU"
+           transactionalMode="off"
+           >
+        <!--TODO: Commenting persistence strategy as of now as it is giving exception while writing to disk.Need to find a better approach
+              -->
+       <!-- <persistence strategy="localTempSwap"/>-->
+
+    </cache>
+
+</ehcache>
