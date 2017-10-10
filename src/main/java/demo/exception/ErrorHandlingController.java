@@ -24,7 +24,7 @@ public class ErrorHandlingController {
 
         
      JsonNode root = mapper.readTree(e.getResponseBodyAsString());
-    
+    e.printStackTrace();
      return new ResponseEntity<String>(mapper.writeValueAsString( mapper.createObjectNode().set("Modified Response", root)), HttpStatus.INTERNAL_SERVER_ERROR);
    }
    
@@ -35,7 +35,7 @@ public class ErrorHandlingController {
    public ResponseEntity<String> generalException(Exception e) throws Exception {
       
     //  ErrorModel errorModel=createErrorResponse(e.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR.toString(),"Getting general exception from edge");
-	   
+       e.printStackTrace();
             return new ResponseEntity<String>(mapper.writeValueAsString(mapper.createObjectNode().put("Modified Response for general exception", e.getMessage())), HttpStatus.INTERNAL_SERVER_ERROR);        
       
    }
