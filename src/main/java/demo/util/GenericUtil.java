@@ -79,7 +79,7 @@ private String passWord;
 	        Authenticator auth = new Authenticator() {
 				//override the getPasswordAuthentication method
 				protected PasswordAuthentication getPasswordAuthentication() {
-					return new PasswordAuthentication("testusertest1111@gmail.com", passWord);
+					return new PasswordAuthentication("insuredcustomercare@gmail.com", passWord);
 				}
 			};
 			System.out.println(userName + " " +passWord);
